@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cormorant Garamond", serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0b0d24 0%, #020207 100%);
+  color: white;
+}
+
+/* Animated star layers */
+.stars, .stars2, .stars3 {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-repeat: repeat;
+  top: -50%;
+  left: -50%;
+}
+
+.stars {
+  background-image: radial-gradient(1px 1px at 20px 30px, white, transparent),
+                    radial-gradient(1px 1px at 200px 100px, white, transparent),
+                    radial-gradient(1px 1px at 400px 300px, white, transparent);
+  animation: moveStars 180s linear infinite;
+  opacity: .4;
+}
+
+.stars2 {
+  background-image: radial-gradient(1px 1px at 100px 200px, white, transparent),
+                    radial-gradient(1px 1px at 300px 400px, white, transparent);
+  animation: moveStars 240s linear infinite;
+  opacity: .25;
+}
+
+.stars3 {
+  background-image: radial-gradient(1px 1px at 50px 80px, white, transparent);
+  animation: moveStars 300s linear infinite;
+  opacity: .15;
+}
+
+@keyframes moveStars {
+  from { transform: translate(0,0); }
+  to { transform: translate(-500px, -500px); }
+}
+
+/* Glass window */
+.window {
+  position: relative;
+  z-index: 5;
+  background: rgba(10, 12, 40, 0.65);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 50px 70px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 60px rgba(120,160,255,0.15);
+  text-align: center;
+}
+
+/* Center everything */
+.center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Option buttons */
+.option {
+  display: block;
+  margin: 20px auto;
+  padding: 14px 60px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.option:hover {
+  background: white;
+  color: #0b0d24;
+  box-shadow: 0 0 25px rgba(255,255,255,.8);
+}
+
+/* Letter */
+.letter {
+  width: 65%;
+  min-height: 65vh;
+  padding: 50px;
+  background: rgba(10, 12, 40, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 0 80px rgba(140,180,255,.15);
+  z-index: 5;
+}
+
+.letter textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  outline: none;
+  resize: none;
+}
+
+/* Aliens */
+.alien {
+  position: absolute;
+  bottom: 0;
+  width: 260px;
+  z-index: 4;
+}
+
+.alien.left {
+  left: 20px;
+  filter: drop-shadow(0 0 25px rgba(0,255,150,.4));
+}
+
+.alien.right {
+  right: 20px;
+  filter: drop-shadow(0 0 25px rgba(180,100,255,.4));
+}
