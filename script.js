@@ -1,11 +1,9 @@
 function goToLetter() {
   window.location.href = "letter.html";
   }
-  
 function goToPrompt() {
   window.location.href = "prompt.html";
   }
-  
 function goToPrompt2() {
   window.location.href = "prompt2.html";
   }
@@ -27,3 +25,9 @@ function goToPrompt7(){
 function goToPrompt8(){
   window.location.href = "prompt8.html";
   }
+function goToCheesyGrin(){
+  window.location.href = "cheesygrin.html";
+  }
+function goToBite(){
+  window.location.href = "bite.html";
+}
