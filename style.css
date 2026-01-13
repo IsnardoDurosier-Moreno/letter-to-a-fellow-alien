@@ -14,42 +14,6 @@ body {
   color: white;
 }
 
-/* Animated star layers */
-.stars, .stars2, .stars3 {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background-repeat: repeat;
-  top: -50%;
-  left: -50%;
-}
-
-.stars {
-  background-image: radial-gradient(1px 1px at 20px 30px, white, transparent),
-                    radial-gradient(1px 1px at 200px 100px, white, transparent),
-                    radial-gradient(1px 1px at 400px 300px, white, transparent);
-  animation: moveStars 180s linear infinite;
-  opacity: .4;
-}
-
-.stars2 {
-  background-image: radial-gradient(1px 1px at 100px 200px, white, transparent),
-                    radial-gradient(1px 1px at 300px 400px, white, transparent);
-  animation: moveStars 240s linear infinite;
-  opacity: .25;
-}
-
-.stars3 {
-  background-image: radial-gradient(1px 1px at 50px 80px, white, transparent);
-  animation: moveStars 300s linear infinite;
-  opacity: .15;
-}
-
-@keyframes moveStars {
-  from { transform: translate(0,0); }
-  to { transform: translate(-500px, -500px); }
-}
-
 /* Glass window */
 .window {
   position: relative;
@@ -95,9 +59,9 @@ body {
 
 /* Letter */
 .letter {
-  width: 65%;
+  width: min(90vw,800px);
   min-height: 65vh;
-  padding: 50px;
+  padding: clamp(20px, 4vw, 50px);
   background: rgba(10, 12, 40, 0.6);
   backdrop-filter: blur(20px);
   border-radius: 20px;
@@ -112,21 +76,3 @@ body {
   line-height: 1.5;
 }
 
-
-/* Aliens */
-.alien {
-  position: absolute;
-  bottom: 0;
-  width: 260px;
-  z-index: 4;
-}
-
-.alien.left {
-  left: 20px;
-  filter: drop-shadow(0 0 25px rgba(0,255,150,.4));
-}
-
-.alien.right {
-  right: 20px;
-  filter: drop-shadow(0 0 25px rgba(180,100,255,.4));
-}
